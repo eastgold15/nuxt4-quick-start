@@ -1,0 +1,27 @@
+body {
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.dark-mode body {
+  /*  使用变量主题，只需要定义变量，在文件中使用就好 */
+  --primary: #ebf4f1;
+  --opposite: #091a28;
+  --secondary: #10b981;
+  --background: #ffffff;
+  --text: #000000;
+
+  background-color: var(--opposite);
+  color: var(--primary);
+}
+
+.sepia-mode body {
+  /*  使用变量主题，只需要定义变量，在文件中使用就好 */
+  --primary: #433422;
+  --opposite: #f1e7d0;
+  --secondary: #0e3125;
+  --background: #ffffff;
+  --text: #6d5959;
+  background-color: var(--opposite);
+  color: var(--primary);
+}
