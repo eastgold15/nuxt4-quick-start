@@ -1,27 +1,48 @@
+/* Light Theme */
 body {
-  background-color: #fff;
-  color: rgba(0, 0, 0, 0.8);
+  /*  使用变量主题，只需要定义变量，在文件中使用就好 */
+  --colors-primary: #3b82f6;
+  /* 明亮蓝色 */
+  --colors-opposite: #e0e7ef;
+  /* 浅灰蓝，反差柔和 */
+  --colors-secondary: #06b6d4;
+  /* 青蓝色，点缀 */
+  --background: #f9fafb;
+  /* 亮白灰 */
+  --text: #23272f;
+  /* 深灰黑，主文字 */
+  background-color: var(--background);
+  color: var(--text);
 }
 
+/* Dark Theme */
 .dark-mode body {
-  /*  使用变量主题，只需要定义变量，在文件中使用就好 */
-  --primary: #ebf4f1;
-  --opposite: #091a28;
-  --secondary: #10b981;
-  --background: #ffffff;
-  --text: #000000;
-
-  background-color: var(--opposite);
-  color: var(--primary);
+  --colors-primary: #60a5fa;
+  /* 柔和亮蓝 */
+  --colors-opposite: #1e293b;
+  /* 深蓝灰，背景 */
+  --colors-secondary: #38bdf8;
+  /* 亮青蓝，点缀 */
+  --background: #0f172a;
+  /* 极深蓝灰，主背景 */
+  --text: #e0e7ef;
+  /* 明亮灰白，主文字 */
+  background-color: var(--background);
+  color: var(--text);
 }
 
+/* Sepia Theme */
 .sepia-mode body {
-  /*  使用变量主题，只需要定义变量，在文件中使用就好 */
-  --primary: #433422;
-  --opposite: #f1e7d0;
-  --secondary: #0e3125;
-  --background: #ffffff;
-  --text: #6d5959;
-  background-color: var(--opposite);
-  color: var(--primary);
+  --colors-primary: #a5855b;
+  /* 柔和棕金色 */
+  --colors-opposite: #f4e9d8;
+  /* 暖米色，背景 */
+  --colors-secondary: #c9a66b;
+  /* 浅金黄，点缀 */
+  --background: #f4e9d8;
+  /* 米色，主背景 */
+  --text: #4b3f2a;
+  /* 深棕色，主文字 */
+  background-color: var(--background);
+  color: var(--text);
 }

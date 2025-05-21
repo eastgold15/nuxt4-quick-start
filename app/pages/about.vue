@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="bg-gray-200 bg-red flex h-screen items-center justify-center">
+  <div class="bg-gray-200 text-primary bg-red flex h-screen items-center justify-center">
     Nuxt4 快速启动模板
 
     <div class="bg-brand" />
