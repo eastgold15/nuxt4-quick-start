@@ -109,6 +109,8 @@ export default antfu(
   // === 针对 .ts 文件的特殊规则（当前为空）===
   {
     files: ["**/*.ts"],
-    rules: {}
+    rules: {
+      "ts/no-unsafe-function-type": "off" // 关闭对不安全函数类型的检查
+    }
   }
 );

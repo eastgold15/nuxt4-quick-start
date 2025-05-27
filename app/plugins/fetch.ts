@@ -1,3 +1,4 @@
+// 这是通用的封装   用于点击事件发出的请求！！
 import type { UseFetchOptions } from "nuxt/app";
 // 定义响应数据类型
 interface ApiResponse<T = any> {

@@ -22,7 +22,8 @@ export default defineNuxtConfig({
     "@nuxt/devtools",
     "@nuxtjs/color-mode",
     "@vueuse/nuxt",
-    "@pinia/nuxt"
+    "@pinia/nuxt",
+    "vue-sonner/nuxt"
   ],
 
   // vueuse
