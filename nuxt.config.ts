@@ -26,10 +26,12 @@ export default defineNuxtConfig({
     "vue-sonner/nuxt"
   ],
 
-  // vueuse
-  vueuse: {
-    ssrHandlers: true
+  //
+  colorMode: {
+    preference: "system",
+    fallback: "light"
   },
+
   runtimeConfig: {
     count: 1,
     apiSecret: "", // 可以由 NUXT_API_SECRET 环境变量覆盖

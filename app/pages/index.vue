@@ -1,14 +1,11 @@
-<script lang="ts" setup>
-const color = useColorMode()
-
-console.warn(color.preference)
-</script>
-
 <template>
-  <div class="bg-primary text-white">
+  <div class="text-white bg-primary">
     首页
 
-    <h1>Color mode: {{ $colorMode.value }}</h1>
+    <ClientOnly>
+      <!-- 服务端拿到的是system ，前端直接拿到system对应的dark避免水合，只在客户端渲染 -->
+      <h1>Color mode: {{ $colorMode.value }}</h1>
+    </ClientOnly>
     <select v-model="$colorMode.preference">
       <option value="system">
         System
@@ -37,3 +34,7 @@ console.warn(color.preference)
     </div>
   </div>
 </template>
+
+<script lang="ts" setup>
+
+</script>

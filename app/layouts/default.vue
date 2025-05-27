@@ -1,6 +1,6 @@
 <template>
   <div
-    ref="scrollWrap"
+    ref="scrollWrap" v-scroll="[onScroll, { throttle: 100 }]"
     class="bg-grid-dashed m-auto px-4 h-full max-w-7xl box-border overflow-y-auto lg:w-6xl md:w-3xl"
   >
     <!-- vue sonner -->
@@ -21,6 +21,10 @@
           显示成功消息
         </button>
 
+        <div v-for="item in 100" :key="item">
+          {{ item }}
+        </div>
+
         <slot />
       </div>
     </div>
@@ -28,6 +32,9 @@
 </template>
 
 <script lang="ts" setup>
+import type { UseScrollReturn } from "@vueuse/core";
+import { vScroll } from "@vueuse/components";
+
 const globalToast = useGlobalToast();
 const { $toast } = useNuxtApp();
 watch(() => globalToast.toastState.value.messages, (messages) => {
@@ -57,4 +64,8 @@ watch(() => globalToast.toastState.value.messages, (messages) => {
     globalToast.clear();
   }
 }, { deep: true });
+
+function onScroll(state: UseScrollReturn) {
+  console.log("123", state); // {x, y, isScrolling, arrivedState, directions}
+}
 </script>
