@@ -23,7 +23,8 @@ export default defineNuxtConfig({
     "@nuxtjs/color-mode",
     "@vueuse/nuxt",
     "@pinia/nuxt",
-    "vue-sonner/nuxt"
+    "vue-sonner/nuxt",
+    "@nuxt/icon"
   ],
 
   //

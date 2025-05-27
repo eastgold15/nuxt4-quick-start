@@ -23,6 +23,8 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.13.0",
+    "@iconify-json/basil": "^1.2.2",
+    "@nuxt/icon": "^1.13.0",
     "@pinia/nuxt": "^0.11.0",
     "@unocss/eslint-plugin": "^66.1.0",
     "@unocss/preset-wind4": "^66.1.1",

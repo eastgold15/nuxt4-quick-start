@@ -1,6 +1,6 @@
 <template>
   <div
-    ref="scrollWrap" v-scroll="[onScroll, { throttle: 100 }]"
+    ref="scrollWrap"
     class="bg-grid-dashed m-auto px-4 h-full max-w-7xl box-border overflow-y-auto lg:w-6xl md:w-3xl"
   >
     <!-- vue sonner -->
@@ -20,10 +20,6 @@
         <button @click="globalToast.add({ type: 'success', message: '成功消息' })">
           显示成功消息
         </button>
-
-        <div v-for="item in 100" :key="item">
-          {{ item }}
-        </div>
 
         <slot />
       </div>
