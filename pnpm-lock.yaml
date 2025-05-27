@@ -20,6 +20,9 @@ importers:
       '@vueuse/nuxt':
         specifier: ^13.2.0
         version: 13.2.0(magicast@0.3.5)(nuxt@3.17.2(@parcel/watcher@2.5.1)(@types/node@22.15.17)(db0@0.3.2)(eslint@9.26.0(jiti@2.4.2))(ioredis@5.6.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.40.2)(terser@5.39.0)(typescript@5.8.3)(vite@6.3.5(@types/node@22.15.17)(jiti@2.4.2)(terser@5.39.0)(yaml@2.7.1))(yaml@2.7.1))(vue@3.5.13(typescript@5.8.3))
+      db0:
+        specifier: ^0.3.2
+        version: 0.3.2
       nuxt:
         specifier: ^3.17.2
         version: 3.17.2(@parcel/watcher@2.5.1)(@types/node@22.15.17)(db0@0.3.2)(eslint@9.26.0(jiti@2.4.2))(ioredis@5.6.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.40.2)(terser@5.39.0)(typescript@5.8.3)(vite@6.3.5(@types/node@22.15.17)(jiti@2.4.2)(terser@5.39.0)(yaml@2.7.1))(yaml@2.7.1)
@@ -39,9 +42,6 @@ importers:
       '@unocss/preset-wind4':
         specifier: ^66.1.1
         version: 66.1.1
-      cross-env:
-        specifier: ^7.0.3
-        version: 7.0.3
       eslint:
         specifier: ^9.26.0
         version: 9.26.0(jiti@2.4.2)
@@ -2020,11 +2020,6 @@ packages:
   croner@9.0.0:
     resolution: {integrity: sha512-onMB0OkDjkXunhdW9htFjEhqrD54+M94i6ackoUkjHKbRnXdyEyKRelp4nJ1kAz32+s27jP1FsebpJCVl0BsvA==}
     engines: {node: '>=18.0'}
-
-  cross-env@7.0.3:
-    resolution: {integrity: sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==}
-    engines: {node: '>=10.14', npm: '>=6', yarn: '>=1'}
-    hasBin: true
 
   cross-spawn@7.0.6:
     resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
@@ -7577,10 +7572,6 @@ snapshots:
       luxon: 3.6.1
 
   croner@9.0.0: {}
-
-  cross-env@7.0.3:
-    dependencies:
-      cross-spawn: 7.0.6
 
   cross-spawn@7.0.6:
     dependencies:

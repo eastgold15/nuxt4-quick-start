@@ -27,8 +27,8 @@ export default defineConfig({
     ["btn", "px-4 py-2 rounded text-white bg-primary hover:bg-secondary"]
   ],
   // theme是完全覆盖unocss带的默认主题，一般使用extendTheme，theme可以不写。
-  theme: {
-  },
+  /*   theme: {
+  }, */
   // 继承默认主题，添加自定义主题去覆盖默认主题。定义主题使用css变量，这样跟换css 变量实现主题切换。
   extendTheme: (defaultTheme: Theme["defaults"]) => ({
     ...defaultTheme, // 默认主题
