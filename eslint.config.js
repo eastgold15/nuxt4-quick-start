@@ -78,7 +78,7 @@ export default antfu(
         fixable: false,
         allowNamed: false
       }],
-      "no-console": ["error", { allow: ["warn", "error"] }],
+      "no-console": ["error", { allow: ["warn", "error", "log"] }],
       "unused-imports/no-unused-vars": ["off"], // 关闭“未使用导入”警告
       "curly": ["error", "multi-line"], // 多行语句必须使用大括号包裹
       "vue/block-order": [
@@ -86,8 +86,8 @@ export default antfu(
         {
           order: ["template", "script", "style"]
         }
-      ] // Vue 块块顺序
-
+      ], // Vue 块块顺序
+      "node/prefer-global/process": "off" // 允许使用全局 process
     }
   },
   // === 针对 .ts 文件的特殊规则（当前为空）===
