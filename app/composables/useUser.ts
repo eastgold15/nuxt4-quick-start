@@ -1,6 +1,6 @@
 import { useStorage } from "@vueuse/core";
-import { skipHydrate } from "pinia";
 
+import { skipHydrate } from "pinia";
 interface User {
   id: string;
 }

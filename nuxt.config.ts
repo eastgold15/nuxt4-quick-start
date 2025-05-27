@@ -1,21 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: "2025-05-27",
-  devtools: { enabled: true },
-  devServer: {
-    port: Number.parseInt(process.env.NUXT_PORT!) || 5000
-  },
-  experimental: {
-    // when using generate, payload js assets included in sw precache manifest
-    // but missing on offline, disabling extraction it until fixed
-    payloadExtraction: false,
-    renderJsonPayloads: true,
-    typedPages: true
-  },
-  future: {
-    compatibilityVersion: 4
-  },
-  css: ["@/assets/style/main.css"],
 
   modules: [
     "@unocss/nuxt",
@@ -24,30 +8,9 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "@pinia/nuxt",
     "vue-sonner/nuxt",
-    "@nuxt/icon"
+    "@nuxt/icon",
+    "@nuxt/eslint"
   ],
-
-  runtimeConfig: {
-    count: 1,
-    apiSecret: "", // 可以由 NUXT_API_SECRET 环境变量覆盖
-    public: {
-      // 可以由 NUXT_BASEURL_DEV 环境变量覆盖
-      apiBase: "",
-      apiBase_mock: ""
-    }
-  },
-
-  $production: {
-    app: {
-      head: {
-        title: "生产模板",
-        titleTemplate: "%s - Nuxt 4 + UnoCSS + VueUse"
-      }
-    }
-    // routeRules: {
-    //   "/**": { isr: true },
-    // },
-  },
   $development: {
     //
     app: {
@@ -64,24 +27,33 @@ export default defineNuxtConfig({
 
   },
 
-  typescript: {
-    strict: true,
-    tsConfig: {
-      compilerOptions: {
-        jsx: "preserve"
+  $production: {
+    app: {
+      head: {
+        title: "生产模板",
+        titleTemplate: "%s - Nuxt 4 + UnoCSS + VueUse",
+        viewport: "width=device-width,initial-scale=1",
+        link: [
+          { rel: "icon", href: "/favicon.ico", sizes: "any" },
+          { rel: "icon", type: "image/svg+xml", href: "/nuxt.svg" },
+          { rel: "apple-touch-icon", href: "/apple-touch-icon.png" }
+        ],
+        meta: [
+          { name: "viewport", content: "width=device-width, initial-scale=1" },
+          { name: "description", content: "Nuxt 4 + UnoCSS + VueUse 模板" },
+          { name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
+          { name: "theme-color", media: "(prefers-color-scheme: light)", content: "white" },
+          { name: "theme-color", media: "(prefers-color-scheme: dark)", content: "#222222" }
+        ]
       }
     }
+    // routeRules: {
+    //   "/**": { isr: true },
+    // },
   },
-  icon: {
-    customCollections: [
-      {
-        prefix: "my-icon",
-        dir: "./app/assets/imgs"
-      }
-    ]
-  },
-  srcDir: "app",
-  serverDir: "server",
+  devtools: { enabled: true },
+
+  css: ["@/assets/style/main.css"],
   //
   colorMode: {
     preference: "light",
@@ -89,14 +61,32 @@ export default defineNuxtConfig({
     classPrefix: "",
     classSuffix: ""
   },
-  eslint: {
-    config: {
-      standalone: false,
-      nuxt: {
-        sortConfigKeys: true
-      }
+
+  runtimeConfig: {
+    count: 1,
+    apiSecret: "", // 可以由 NUXT_API_SECRET 环境变量覆盖
+    public: {
+      // 可以由 NUXT_BASEURL_DEV 环境变量覆盖
+      apiBase: "",
+      apiBase_mock: ""
     }
   },
+  srcDir: "app",
+  serverDir: "server",
+  devServer: {
+    port: Number.parseInt(process.env.NUXT_PORT!) || 5000
+  },
+  future: {
+    compatibilityVersion: 4
+  },
+  experimental: {
+    // when using generate, payload js assets included in sw precache manifest
+    // but missing on offline, disabling extraction it until fixed
+    payloadExtraction: false,
+    renderJsonPayloads: true,
+    typedPages: true
+  },
+  compatibilityDate: "2025-05-27",
   nitro: {
     esbuild: {
       options: {
@@ -109,22 +99,30 @@ export default defineNuxtConfig({
       ignore: ["/hi"]
     }
   },
-  app: {
-    head: {
-      viewport: "width=device-width,initial-scale=1",
-      link: [
-        { rel: "icon", href: "/favicon.ico", sizes: "any" },
-        { rel: "icon", type: "image/svg+xml", href: "/nuxt.svg" },
-        { rel: "apple-touch-icon", href: "/apple-touch-icon.png" }
-      ],
-      meta: [
-        { name: "viewport", content: "width=device-width, initial-scale=1" },
-        { name: "description", content: "Nuxt 4 + UnoCSS + VueUse 模板" },
-        { name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
-        { name: "theme-color", media: "(prefers-color-scheme: light)", content: "white" },
-        { name: "theme-color", media: "(prefers-color-scheme: dark)", content: "#222222" }
-      ]
+
+  typescript: {
+    strict: true,
+    tsConfig: {
+      compilerOptions: {
+        jsx: "preserve"
+      }
     }
   },
+  eslint: {
+    config: {
+      standalone: false,
+      nuxt: {
+        sortConfigKeys: true
+      }
+    }
+  },
+  icon: {
+    customCollections: [
+      {
+        prefix: "my-icon",
+        dir: "./app/assets/imgs"
+      }
+    ]
+  }
 
 });
