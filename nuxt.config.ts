@@ -27,12 +27,6 @@ export default defineNuxtConfig({
     "@nuxt/icon"
   ],
 
-  //
-  colorMode: {
-    preference: "system",
-    fallback: "light"
-  },
-
   runtimeConfig: {
     count: 1,
     apiSecret: "", // 可以由 NUXT_API_SECRET 环境变量覆盖
@@ -77,5 +71,21 @@ export default defineNuxtConfig({
         jsx: "preserve"
       }
     }
+  },
+  icon: {
+    customCollections: [
+      {
+        prefix: "my-icon",
+        dir: "./app/assets/imgs"
+      }
+    ]
+  },
+  //
+  colorMode: {
+    preference: "light",
+    fallback: "light",
+    classPrefix: "",
+    classSuffix: ""
   }
+
 });

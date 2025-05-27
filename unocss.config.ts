@@ -24,7 +24,8 @@ const selfTheme: Theme["defaults"] = {
 export default defineConfig({
   shortcuts: [
     // 示例：定义一些快捷样式
-    ["btn", "px-4 py-2 rounded text-white bg-primary hover:bg-secondary"]
+    ["btn", "px-4 py-2 rounded text-white bg-primary hover:bg-secondary"],
+    ["flex-center", "flex items-center justify-center"]
   ],
   // theme是完全覆盖unocss带的默认主题，一般使用extendTheme，theme可以不写。
   /*   theme: {
