@@ -33,11 +33,8 @@
 
 - 👍 [布局系统](./app/layouts)
 
-- 👍 [Prisma](https://prisma.org.cn/docs/orm/overview/introduction/what-is-prisma)
-
 - 👍 [各种图标集还没为你所用](https://iconify.design/)
 
-- 👍 [I18n 国际化没做呢](/)
 - 👍 [antful的eslint](/)
 
 - ⚙️ 结合 [Gitea Actions](https://github.com/features/actions) 自动化部署/定时部署(快了)
