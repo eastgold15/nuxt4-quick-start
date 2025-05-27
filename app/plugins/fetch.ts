@@ -29,9 +29,30 @@ export default defineNuxtPlugin({
         let errorMessage = response?._data.message || "请求失败";
 
         // 使用全局 toast 显示错误信息
-      /*   const globalToast = useGlobalToast();
-        globalToast.add({ message: errorMessage, type: "error" }); */
+        /*   const globalToast = useGlobalToast();
+          globalToast.add({ message: errorMessage, type: "error" }); */
       }
+    });
+
+    const loading = customRef((trace, trigger) => {
+      let loaddingCount = 0;
+      return {
+        get() {
+          trace(); // 追踪依赖
+          return loaddingCount > 0;
+        },
+        set(value: boolean) {
+          if (value) {
+            loaddingCount++;
+          }
+          else {
+            loaddingCount--;
+          }
+          loaddingCount = Math.max(loaddingCount, 0); // 确保不小于0
+          trigger(); // 触发更新
+        }
+
+      };
     });
 
     const $$fetch = {
@@ -57,7 +78,9 @@ export default defineNuxtPlugin({
         }
         try {
           // @ts-ignore
+          loading.value = true;
           const response: any = await $api<T>(url, defaultOptions);
+          loading.value = false;
           return { data: response?.data };
         }
         catch (error) {
@@ -93,7 +116,8 @@ export default defineNuxtPlugin({
 
     return {
       provide: {
-        api: $$fetch
+        api: $$fetch,
+        loading
       }
     };
   }

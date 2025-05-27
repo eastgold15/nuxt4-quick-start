@@ -1,5 +1,19 @@
 {
-   "files.associations": {
+  "nuxtr.projectTemplates": [
+    {
+      "name": "Vitesse",
+      "description": " Vitesse for Nuxt 3 🏔💚⚡️ ",
+      "repoURL": "https://github.com/antfu/vitesse-nuxt3",
+      "branch": "main"
+    }
+  ],
+  "nuxtr.openItemsAfterCreation": true,
+  "nuxtr.defaultPackageManager": "pnpm",
+  "nuxtr.intellisense.nuxtrc": true,
+  "nuxtr.intellisense.vueFiles": true,
+  "nuxtr.intellisense.nuxtignore": true,
+  "nuxtr.snippets.nitro": true,
+  "files.associations": {
     "*.css": "postcss"
   },
   // Disable the default formatter, use eslint instead

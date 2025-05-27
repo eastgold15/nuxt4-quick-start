@@ -5,7 +5,7 @@
   >
     <!-- vue sonner -->
     <Toaster position="top-right" rich-colors />
-
+    <Loading />
     <div class="m-auto flex gap-5 box-border">
       <div class="h-full w-[100%] lg:w-[100%] md:w-[100%]">
         <ul class="flex flex-row">
@@ -21,6 +21,10 @@
           显示成功消息
         </button>
 
+        <button class="ml-4 bg-red" @click="gofetch">
+          {{ res }}  fetch 测试loadding
+        </button>
+
         <slot />
       </div>
     </div>
@@ -32,7 +36,7 @@ import type { UseScrollReturn } from "@vueuse/core";
 import { vScroll } from "@vueuse/components";
 
 const globalToast = useGlobalToast();
-const { $toast } = useNuxtApp();
+const { $toast, $api } = useNuxtApp();
 watch(() => globalToast.toastState.value.messages, (messages) => {
   if (messages.length > 0) {
     messages.forEach((message) => {
@@ -64,4 +68,10 @@ watch(() => globalToast.toastState.value.messages, (messages) => {
 function onScroll(state: UseScrollReturn) {
   console.log("123", state); // {x, y, isScrolling, arrivedState, directions}
 }
+
+let res = ref("");
+const gofetch = async () => {
+  const { data } = await $api.get("/api/test");
+  res.value = data;
+};
 </script>
