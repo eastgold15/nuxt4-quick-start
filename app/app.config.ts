@@ -1,3 +1,4 @@
 export default defineAppConfig({
-  foo: 'bar'
-})
+  app: "应用名称",
+  appDescription: "Nuxt Stater for Element Plus"
+});

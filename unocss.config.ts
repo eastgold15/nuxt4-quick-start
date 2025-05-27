@@ -33,7 +33,7 @@ export default defineConfig({
   extendTheme: (defaultTheme: Theme["defaults"]) => ({
     ...defaultTheme, // 默认主题
     colors: {
-      ...defaultTheme.colors, // 保留默认颜色
+      ...defaultTheme?.colors, // 保留默认颜色
       ...selfTheme.colors // 添加自定义颜色
     }
   }),

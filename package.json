@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.13.0",
+    "@pinia/nuxt": "^0.11.0",
     "@unocss/eslint-plugin": "^66.1.0",
     "@unocss/preset-wind4": "^66.1.1",
     "eslint": "^9.26.0",
