@@ -1,6 +1,7 @@
+// @ts-check
 // 引入 @antfu/eslint-config，这是一个基于 Vue 3、TypeScript 和现代前端最佳实践的 ESLint 配置集合
 import antfu from "@antfu/eslint-config";
-
+import nuxt from "./.nuxt/eslint.config.mjs";
 // 导出默认配置，调用 antfu 函数并传入自定义配置对象
 // https://github.com/antfu/eslint-config
 export default antfu(
@@ -113,4 +114,4 @@ export default antfu(
       "ts/no-unsafe-function-type": "off" // 关闭对不安全函数类型的检查
     }
   }
-);
+).append(nuxt());

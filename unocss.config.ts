@@ -1,5 +1,5 @@
 import type { Theme } from "@unocss/preset-wind4";
-import { createRemToPxProcessor } from "@unocss/preset-wind4/utils";
+import { createLocalFontProcessor } from "@unocss/preset-web-fonts/local";
 import {
   defineConfig,
   presetAttributify,
@@ -10,7 +10,6 @@ import {
   transformerDirectives,
   transformerVariantGroup
 } from "unocss";
-
 // 自定义主题，变量到style/main.css中定义
 const selfTheme: Theme["defaults"] = {
   // 这里的颜色，虽然写了--primary 但在main.css中使用记得写成--color-primary
@@ -23,9 +22,25 @@ const selfTheme: Theme["defaults"] = {
 
 export default defineConfig({
   shortcuts: [
-    // 示例：定义一些快捷样式
-    ["btn", "px-4 py-2 rounded text-white bg-primary hover:bg-secondary"],
-    ["flex-center", "flex items-center justify-center"]
+    ["btn", "px-4 py-1 rounded inline-block bg-teal-600 text-white cursor-pointer hover:bg-teal-700 disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50"],
+    ["icon-btn", "inline-block cursor-pointer select-none opacity-75 transition duration-200 ease-in-out hover:opacity-100 hover:text-teal-600"]
+  ],
+  presets: [
+    presetWind4(),
+    presetAttributify(),
+    presetIcons({
+      scale: 1.2
+    }),
+
+    presetTypography(),
+    presetWebFonts({
+      fonts: {
+        sans: "DM Sans",
+        serif: "DM Serif Display",
+        mono: "DM Mono"
+      },
+      processors: createLocalFontProcessor()
+    })
   ],
   // theme是完全覆盖unocss带的默认主题，一般使用extendTheme，theme可以不写。
   /*   theme: {
@@ -39,25 +54,6 @@ export default defineConfig({
     }
   }),
 
-  presets: [
-    presetWind4({
-      preflights: {
-        reset: true,
-        theme: {
-          mode: true,
-          process: createRemToPxProcessor()
-
-        }
-      }
-    }),
-    presetAttributify(),
-    presetIcons({ scale: 1.2 }),
-    presetTypography(),
-    presetWebFonts({
-      themeKey: "font"
-    })
-  ],
-  postprocess: [createRemToPxProcessor()],
   transformers: [
     transformerDirectives(),
     transformerVariantGroup()
